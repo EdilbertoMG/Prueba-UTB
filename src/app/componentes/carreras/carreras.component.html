@@ -1,0 +1,7 @@
+<div *ngFor="let carrera of carreras;index as i" class="card animated fadeIn fast">
+        <img [src]="carrera.img" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{ carrera.nombre }}</h5>
+          <p class="card-text">{{ carrera.descripcion }}</p>
+        </div>
+</div>

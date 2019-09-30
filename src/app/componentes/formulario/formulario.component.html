@@ -1,0 +1,127 @@
+<div class="fondo animated fadeIn fast card">
+<div class="text-center">
+    <img class="img-logo" src="../../../assets/img/logo.png" alt="Logo utb">
+    <h4>TRANSFORMAMOS VIDAS CON EDUCACIÓN DE EXCELENCIA</h4>
+    <br />
+</div>
+<div class="form-container"><!--creamos el form-container-->
+<form [formGroup]="contacForm" (ngSubmit)="onSaveForm()"><!--le damos nombre al FormGroup y utilizamos el ngSubmit para enviar la info del formulario-->
+        <div class="form-group">
+                 <label for="nombre">Nombre:</label>
+                 <input type="text" formControlName="name" class="form-control" placeholder="Nombre"><!--formControlName nombre para cada input-->
+                 <!--Validacion de formularios con Angular-->
+                <div class="alert alert-danger" *ngIf="name.invalid && (name.dirty || name.touched)">
+                 <p *ngIf="name.errors.required">
+                    Nombre es requerido.
+                 </p>
+                  <p *ngIf="name.errors.minlength">
+                    Nombre muy pequeño minimo 5 caracteres.
+                  </p>
+                </div>
+                <!--Final-->
+        </div>
+        <div class="form-group">
+                 <label for="apellidos">Apellidos:</label>
+                 <input type="text" formControlName="apellidos" class="form-control" placeholder="Apellidos">
+                 <!--Validacion de formularios con Angular-->
+                    <div class="alert alert-danger" *ngIf="apellidos.invalid && (apellidos.dirty || apellidos.touched)">
+                    <p *ngIf="apellidos.errors.required">
+                       Apellidos es requerido.
+                    </p>
+                     <p *ngIf="apellidos.errors.minlength">
+                       Apellidos muy pequeño minimo 5 caracteres.
+                     </p>
+                   </div>
+                   <!--Final-->
+        </div>
+        <div class="form-group">
+                 <label for="exampleInputEmail1">Correo electrónico:</label>
+                 <input type="email" formControlName="email" class="form-control" aria-describedby="emailHelp" placeholder="Correo electrónico">
+                 <small id="emailHelp" class="form-text text-muted">Nunca compartiremos su correo electrónico con nadie más.</small>
+                    <!--Validacion de formularios con Angular-->
+                    <div class="alert alert-danger" *ngIf="email.invalid && (email.dirty || email.touched)">
+                    <p *ngIf="email.errors.required">
+                       Email es requerido.
+                    </p>
+                     <p *ngIf="email.errors.minlength">
+                       Email muy pequeño minimo 5 caracteres.
+                     </p>
+                      <!--Validacion Email-->
+                     <p *ngIf="(email.dirty || email.touched) && email.invalid && email.errors.pattern">
+                        El valor debe ser una dirección de correo electrónico válida.
+                      </p>
+                   </div>
+                   <!--Final-->
+        </div>
+        <div class="form-group">
+                 <label for="numero">Número celular:</label>
+                 <input type="number" formControlName="numero" class="form-control" placeholder="Celular">
+                 <!--Validacion de formularios con Angular-->
+                 <div class="alert alert-danger" *ngIf="numero.invalid && (numero.dirty || numero.touched)">
+                    <p *ngIf="numero.errors.required">
+                       Celular es requerido.
+                    </p>
+                     <p *ngIf="numero.errors.minlength">
+                       Calular muy pequeño minimo 7 caracteres.
+                     </p>
+                </div>
+                <!--Final-->
+        </div>
+        <div class="form-group">
+                  <label for="FormControlSelect1">Programa de interés:</label>
+                  <select formControlName="carrera" class="form-control">
+                  <option value="" disabled>Programa de interés:</option>
+                  <!--ngFor para recorrer la data que nos da el servicio-->
+                  <option *ngFor="let carrera of carreras">{{ carrera.nombre }}</option>
+                  </select>
+                  <!--Validacion de formularios con Angular-->
+                 <div class="alert alert-danger" *ngIf="carrera.invalid && (carrera.dirty || carrera.touched)">
+                    <p *ngIf="carrera.errors.required">
+                       Carrera es requerido
+                    </p>
+                </div>
+                <!--Final-->
+        </div>
+        <div class="form-group">
+          <label class="form-check-label" for="exampleCheck1">Al hacer clic en "<strong>más información</strong>", usted confirma que leyó nuestra Política de datos y autoriza a la UTB el uso de sus datos personales.</label>
+        </div>
+        <!--Desactivamos el boton de envio hasta que todos los campos de formulario esten correctos-->
+        <button type="submit" class="btn btn-success btn-block" [disabled]="!contacForm.valid">Solicitar más información</button>
+</form>
+</div>
+<br />
+    <h4 class="text-center">Somos Lideres, Somos Talento, Somos Innovación</h4>
+<br />
+</div>
+<div class="card contactanos">
+  <h4 class="text-center">Contáctenos</h4>
+    <h6><strong>Dirección:</strong> Campus Casa Lemaitre Barrio Manga, Calle del Bouquet - Cra.21 #25-92</h6>
+    <h6><strong>Correo: </strong>contactoutb@utb.edu.co</h6>
+    <h6><strong>Pbx: </strong>(+57)(5) 6606041 – 6606042 Ext. 458, 453, 440, 465</h6>
+    <h6><strong>Cel: </strong>(+57) 3113405776, 3113400661, 3106508107, 3216085653</h6>
+</div>
+
+<div class="card contactanos">
+    <div class="text-regular text-dark d-inline-flex text-center mx-auto">
+        <a href="http://www.facebook.com/utboficial" target="_blank" class="ml">
+            <figure>
+                <img src="https://cdn0.iconfinder.com/data/icons/social-networks-and-media-flat-icons/133/Social_Media_Socialmedia_network_share_socialnetwork_network-09-512.png" alt="" class="img-fluid d-block" style="width: 40px;">
+            </figure>
+        </a>
+        <a href="http://www.instagram.com/utboficial" target="_blank" class="ml-3">
+            <figure>
+                <img src="https://cdn3.iconfinder.com/data/icons/free-social-icons/67/instagram_circle_color-512.png" alt="" class="img-fluid d-block" style="width: 40px;">
+            </figure>
+        </a>
+        <a href="http://www.twitter.com/utboficial" target="_blank" class="ml-3">
+            <figure>
+                <img src="https://cdn3.iconfinder.com/data/icons/free-social-icons/67/twitter_circle_color-512.png" alt="" class="img-fluid d-block" style="width: 40px;">
+            </figure>
+        </a>
+        <a href="https://www.linkedin.com/school/universidad-tecnol%C3%B3gica-de-bol%C3%ADvar/" target="_blank" class="ml-3">
+            <figure>
+                <img src="https://cdn3.iconfinder.com/data/icons/free-social-icons/67/linkedin_circle_color-512.png" alt="" class="img-fluid d-block" style="width: 40px;">
+            </figure>
+        </a>
+    </div>
+</div>

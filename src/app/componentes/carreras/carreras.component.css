@@ -1,0 +1,7 @@
+.card{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.card-body{
+    background: rgb(248, 248, 248) !important;
+}
